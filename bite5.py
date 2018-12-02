@@ -22,6 +22,15 @@ def slice_and_dice(text=text):
        if so split the line into words and append the last word to
        the results list. Make sure the you strip off any trailing
        exclamation marks (!) and dots (.), Return the results list."""
-    s = text.strip().split('\n')
-    for items
     results = []
+    s = text.strip().split('\n')
+    for item in s:
+        item = item.strip()
+        if item[0].islower():
+            item = item.rstrip('!')
+            item = item.rstrip('.')
+            words = item.split(' ')
+            results.append(words[words.__len__()-1])
+    return results
+
+slice_and_dice(text)
