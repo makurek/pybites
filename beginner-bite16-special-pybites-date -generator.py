@@ -39,24 +39,30 @@ from datetime import datetime
 from datetime import timedelta
 from itertools import islice
 
+PYBITES_BORN = datetime(year=2016, month=12, day=19)
 
-def gen_special_pybites_dates():
-    PYBITES_BORN = datetime(year=2016, month=12, day=19)
-    limit = datetime(year=2020, month=1, day=1)
-    current = PYBITES_BORN
-    delta_100d = timedelta(days=100)
-    delta_1y = timedelta(days=365)
-    exec_cnt = 1
-    while(current.year <= 2020):
-        if exec_cnt % 4:
-            current = current + delta_100d
-            yield current
+def gen_special_pybites_dates_1():
+
+    days = 0
+    while True:
+        days += 1
+        if days % 100 == 0 or days % 365 == 0:
+            yield PYBITES_BORN + timedelta(days=days)
+
+def gen_special_pybites_dates_2():
+    
+    plus365 = timedelta(days=365)
+    plus100 = timedelta(days=100)
+    next365 = PYBITES_BORN + plus365
+    next100 = PYBITES_BORN + plus100
+    while True:
+        if next365 < next100:
+            nextevent = next365
+            next365 += plus365
         else:
-            PYBITES_BORN = PYBITES_BORN + delta_1y
-            yield PYBITES_BORN
-        exec_cnt = exec_cnt + 1
-
-
+            nextevent = next100
+            next100 += plus100
+        yield nextevent
 
 gen = gen_special_pybites_dates()
 dates = list(islice(gen,20))
