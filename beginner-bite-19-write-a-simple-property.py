@@ -38,6 +38,6 @@ class Promo:
     def expired(self):
         return datetime.now() > self.expires
 
-    
+
 
 
