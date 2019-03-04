@@ -50,7 +50,7 @@ def gen_special_pybites_dates_1():
             yield PYBITES_BORN + timedelta(days=days)
 
 def gen_special_pybites_dates_2():
-    
+
     plus365 = timedelta(days=365)
     plus100 = timedelta(days=100)
     next365 = PYBITES_BORN + plus365
