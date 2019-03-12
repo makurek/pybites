@@ -17,23 +17,22 @@ def dedup_and_title_case_names(names):
     """Should return a list of names, each name appears only once"""
     new_list = []
     for item in names:
-        if item not in new_list:
-            new_list.append(item)
+         if item.title() not in new_list:
+             new_list.append(item.title())
     return new_list
 
 def sort_by_surname_desc(names):
     """Returns names list sorted desc by surname"""
-    return sorted(names, key=lambda x: x.split(" ")[-1])
-
+    return sorted(names, key=lambda x: x.split(" ")[1], reverse = True)
 
 
 def shortest_first_name(names):
     """Returns the shortest first name (str)"""
-    names = dedup_and_title_case_names(names)
-    # ...
+    return sorted(names, key=lambda x: len(x.split(" ")[0]))[0].split(" ")[0]
 
-
-l = dedup_and_title_case_names(NAMES)
-print(l)
-l = sort_by_surname_desc(l)
-print(l)
+a = dedup_and_title_case_names(NAMES)
+print(a)
+b = sort_by_surname_desc(a)
+print(b)
+c = shortest_first_name(a)
+print(c)
