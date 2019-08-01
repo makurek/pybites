@@ -10,6 +10,7 @@ You can loop through both sequences but maybe there is a more concise way to do 
 '''
 
 # https://stackoverflow.com/questions/22736641/xor-on-two-lists-in-python
+# https://docs.python.org/3/tutorial/datastructures.html
 
 def uncommon_cities_solution_1(my_cities, other_cities):
     """Compare my_cities and other_cities and return the number of different
