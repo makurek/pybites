@@ -16,10 +16,31 @@ Have fun and keep coding in Python!
 
 '''
 
+import re
+
 def wc(file_):
     """Takes an absolute file path/name, calculates the number of
        lines/words/chars, and returns a string of these numbers + file, e.g.:
        3 12 60 /tmp/somefile
        (both tabs and spaces are allowed as separator)"""
-    pass
+    cnt_line = 0
+    cnt_words = 0
+    cnt_chars = 0
+    within_word = False
+    try:
+        fo = open(file_, 'r')
+    except:
+        print("Cannot open file")
+    filename = fo.name
+    for line in fo:
+        cnt_line += 1
+        cnt_chars += len(line)
+        parts = re.split(r'[\t ]', line)
+        cnt_words += len(parts)
 
+    fo.close()
+
+    return print(f'{cnt_line} {cnt_words} {cnt_chars} {filename}')
+
+
+wc("beginner-bite-96-test.txt")
