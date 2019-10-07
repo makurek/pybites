@@ -34,7 +34,7 @@ def tail(filepath, n):
     for line in fo.readlines():
         contents.append(line.strip())
     fo.close()
-    return contents[-10:]
+    return contents[-n:]
 
 
 
