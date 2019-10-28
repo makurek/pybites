@@ -80,7 +80,7 @@ def get_all_matching_models(cars=cars, grep='trail'):
 
 
 def sort_car_models(cars=cars):
-    """sort the car models (values) and return the resulting cars dict"""
+    """sort the car models (values)  and return the resulting cars dict"""
     for key, value in cars.items():
         value.sort()
     return cars

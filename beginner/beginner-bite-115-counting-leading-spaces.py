@@ -23,6 +23,8 @@ def count_indents_v1(text):
 
     return n
 
+def count_indents_v2(string text):
+
 v1 = count_indents_v1("   test  ")
 print(f"v1: {v1}")
 
