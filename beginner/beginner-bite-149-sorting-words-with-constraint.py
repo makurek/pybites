@@ -21,20 +21,22 @@ def sort_words_case_insensitively(words):
        (1995, 19ab = numbers / Happy, happy4you = strings, hence for
         numbers you only need to check the first char of the word)
     """
-    print(words)
-    num = []
+    # New list for numbers
+    nums = []
+    print(f"### Initial list {words}")
+    ### IMPORTANT!!!! DO NOT modify a list when iterating over it!!!!
     for word in words:
-        print("Current word " + str(word))
-        if word[0] in '123456789':
-            print(word)
-            num.append(word)
-            words.remove(word)
-    if len(num) > 0:
-        num_sorted = sorted(num)
+        if word[0].isdigit():
+            nums.append(word)
+    nums = sorted(nums)
+    for num in nums:
+        words.remove(num)
+
     s = sorted(words, key=lambda s: s.casefold())
     print(s)
-    for n in num_sorted:
-        s.append(n)
+    print(nums)
+    for num in nums:
+        s.append(num)
     print(s)
     return s
 
