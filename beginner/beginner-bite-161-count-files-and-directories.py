@@ -38,14 +38,21 @@ Good luck and have fun!
 
 import os
 
-
+# Solution 1
 def count_dirs_and_files(directory='.'):
     """Count the amount of of directories and files in passed in "directory" arg.
        Return a tuple of (number_of_directories, number_of_files)
     """
-    x =  os.walk(directory)
-    r = next(x)
-    result = (len(r[1]), len(r[2]))
+    # os.walk() returns a generator that creates a tuple of values (current_path, directories in current_path,
+    # files in current_path)
+    # Every time the generator is called it will follow each directory recursively until no further
+    # subdirectories are available from the initial directory that walk was called upon
+    count_dirs = 0
+    count_files = 0
+    for dir, number_of_dirs, number_of_files in os.walk(directory):
+        count_dirs += len(number_of_dirs)
+        count_files += len(number_of_files)
+    result = (count_dirs, count_files)
     return result
 
-count_dirs_and_files()
+print(count_dirs_and_files())
