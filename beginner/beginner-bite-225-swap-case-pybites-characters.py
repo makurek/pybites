@@ -8,8 +8,6 @@ Not much more as for our instruction, just complete convert_pybites_chars which 
 >>> convert_pybites_chars(text)
 'todaY wE addEd tWO NeW bITES To our plaTform, ExcITIng!'
 (Note that all converted chars are in the string pybites)
-
-Have fun and code more Python!
 '''
 
 
@@ -30,5 +28,10 @@ def convert_pybites_chars(text):
             output += output.join(char)
     return output
 
+def convert_pybites_chars_pybites_solution(text):
+    """Swap case all characters in the word pybites for the given text.
+       Return the resulting string."""
+    return ''.join(c.swapcase() if c.lower() in PYBITES else c
+                   for c in text)
 
 print(convert_pybites_chars(t))
