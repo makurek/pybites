@@ -12,6 +12,7 @@ UserAccessExpired and UserNoPermission respectively. Check out the tests for mor
 
 from collections import namedtuple
 
+# https://stackoverflow.com/questions/2970608/what-are-named-tuples-in-python
 User = namedtuple('User', 'name role expired')
 USER, ADMIN = 'user', 'admin'
 SECRET = 'I am a very secret token'
@@ -55,6 +56,9 @@ def pyb_get_user(username):
     # https://stackoverflow.com/questions/11041405/why-dict-getkey-instead-of-dictkey
     # So if user does not exist, None is returned
     # https://stackoverflow.com/questions/9494404/use-of-true-false-and-none-as-return-values-in-python-functions
+    # https://stackoverflow.com/questions/21095654/what-is-a-nonetype-object
+    # https://stackoverflow.com/questions/23086383/how-to-test-nonetype-in-python
+    # https://stackoverflow.com/questions/19473185/what-is-a-none-value
     return users.get(username)
 
 def pyb_get_secret_token(username):
@@ -63,6 +67,9 @@ def pyb_get_secret_token(username):
     print(user)
     # Big question here how to test for None: if not x vs if x is None
     # https://stackoverflow.com/questions/24270344/is-there-a-difference-between-if-not-x-and-if-x-is-none
+    # https://amir.rachum.com/blog/2012/08/25/you-cant-handle-the-truth/
+    # https://stackoverflow.com/questions/2052390/manually-raising-throwing-an-exception-in-python
+    # https://stackoverflow.com/questions/1319615/proper-way-to-declare-custom-exceptions-in-modern-python
     if not user:
         raise UserDoesNotExist
 
