@@ -22,17 +22,28 @@ def major_n_minor(numbers):
     test = {'oranges': 5,
             'apples': 3,
             'peach': 1}
-    print(type((test.items())))
-    print(type(test.values()))
-    print(type(test.keys()))
+    #print(type((test.items())))
+    #print(type(test.values()))
+    #print(type(test.keys()))
+    # Co to tak naprawde znaczy OrderedDict? ORdered wg klucza czy wartosci?
     d = OrderedDict()
     for num in numbers:
         try:
             d[num] += 1
         except:
             d[num] = 1
+    #print(d)
+    zwykly = {}
+    for num in numbers:
+        try:
+            zwykly[num] += 1
+        except:
+            zwykly[num] = 1
+    sor = sorted(zwykly.items(), key=lambda x: x[1] )
+    print(sor)
     # difference between for i in d:
     # for i in d.items(): ?
-    return (next((iter(reversed(d.items()))))[1], next(iter(d.items()))[1] )
+    #return (next((iter(reversed(sor.items()))))[0], next(iter(sor.items()))[0] )
+    return sor[-1][0], sor[0][0]
 
 print(major_n_minor([0,0,0,1,2,2]))
