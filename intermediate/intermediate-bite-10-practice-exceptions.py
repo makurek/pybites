@@ -9,8 +9,6 @@ if the result of the division (after surviving the exceptions) is negative, rais
 As always see the tests written in pytest to see what your code need to pass. Have fun!
 
 """
-
-
 def my_solution_positive_divide(numerator, denominator):
     try:
         result = numerator / denominator
