@@ -12,7 +12,7 @@ the number of teams would be greater.
 See the tests for more details. Enjoy :)
 """
 
-def friends_teams(friends: list, team_size: int, order_does_matter: bool = False) -> list:
+def my_solution_friends_teams(friends: list, team_size: int, order_does_matter: bool = False) -> list:
 
     if order_does_matter:
         result = permutations(friends, team_size)
@@ -20,6 +20,6 @@ def friends_teams(friends: list, team_size: int, order_does_matter: bool = False
         result = combinations(friends, team_size)
     return list(result)
 
-
-result = friends_teams(['Bob', 'Alice', 'John', 'Mary', 'Theo', 'Julius'], 2, order_does_matter = True)
+result = my_solution_friends_teams(['Bob', 'Alice', 'John', 'Mary', 'Theo', 'Julius'], 2, order_does_matter = True)
 print(result)
+
