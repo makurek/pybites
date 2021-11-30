@@ -1,5 +1,6 @@
 ''''
-Iterate over the given names and countries lists. In each loop print the value of each and also the counter of
+Iterate over the given names and countries lists. In each loop print the value
+of each and also the counter of
 the loop (starting at 1).
 
 Here is the output you need to deliver. Ideally you use only one for loop.

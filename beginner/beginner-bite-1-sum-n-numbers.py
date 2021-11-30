@@ -21,6 +21,9 @@ input = []
 ###  4. Some objects in Python are cached for efficieny reasons
 ###     https://medium.com/@bdov_/https-medium-com-bdov-python-objects-part-ii-demystifying-cpython-shared-objects-fce1ec86dd63
 ###  5. Every object has value, type and memory location (id)
+
+### https://realpython.com/null-in-python/
+
 ################################################################################
 
 
@@ -32,8 +35,9 @@ def my_sum_numbers(numbers=None):
     result = 0
     # Dlaczego samo "if numbers:" nie dziala? Tzn. wtedy jak podamy pusta liste to nie spelnia warunku?
     # albo inaczej, przy przekazywaniu argumentu "if arg" dla pelnej tablicy dziala, dla pustej nie
-    # "false" values include False, None, 0 and [] (an empty list).
-    # Bo if testuje wartosc boolowska danej zmiennej. Dlatego jak podamy pusta liste, to bedzie traktowane jako bool false i
+    # "false" values include False, None, 0 and [] (an empty list), also empty sets, strings, dicts.
+    # Bo if testuje wartosc boolowska danej zmiennej. Dlatego jak podamy pusta liste,
+    # to bedzie traktowane jako bool false i
     # zostanie policzona suma 1-100.
 
     # None ma wartosc boolowska false, czyli albo moge sprawdzic wartosc albo moge sprawdzic typ obiektu

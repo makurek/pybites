@@ -21,6 +21,9 @@ Notes:
 * capitalize() vs title()
 * https://www.thoughtco.com/pythons-string-templates-2813675
 
+- capitalize() will only capitalize the first character if it's a letter
+- title() will capitalize the first letter encountered, with a weird issue capitalizing every letter 
+encountered after an apostrophe
 
 '''
 
