@@ -1,3 +1,4 @@
+from collections import namedtuple
 """
 Sometimes you need to restructure a nested data structure.
 For example you can convert a dict in a list of
@@ -33,12 +34,25 @@ def transpose(data):
       In: transpose(data)
       Out: [('Bob', 'Julian'), (60, 221), (60, 34), (56, 78)]
       """
+    Member = namedtuple('Member', 'name since_days karma_points bitecoin_earned')
+
     data = [Member(name='Bob', since_days=60, karma_points=60,
                    bitecoin_earned=56),
             Member(name='Julian', since_days=221,
                    karma_points=34,
                    bitecoin_earned=78)]
-    result = zip(data)
-    print(result)
+
+    #if data is list
+    #keys = data.keys()
+    #values = data.values()
+    #t = [tuple(keys), tuple(values)]
+    #print(t)
+    """
+    t = [tuple(e[0] for e in data), tuple(e[1] for e in data), tuple(e[2] for e in data), tuple(e[3] for e in data)]
+    print(t)
+    """
+    print(*data)
+
+
 
 transpose({'2017-8': 18, '2017-9': 13})
