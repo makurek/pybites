@@ -1,7 +1,7 @@
 # zip(), lists, tuples
 
 # list is a sequence type
-# list can hold heterogenous elements
+# list can hold heterogenouous elements
 # list is mutable - can expand, shrink, elements can be modified
 # list is iterable
 
