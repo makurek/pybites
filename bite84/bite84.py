@@ -1,6 +1,6 @@
 """
-Complete flatten that takes a list of lists (which can have lists ad infinitum) and flatten them into a one dimensional
-list.
+Complete flatten that takes a list of lists (which can have lists ad infinitum) and
+flatten them into a one dimensional list.
 
 So this input:
 
