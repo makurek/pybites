@@ -1,13 +1,9 @@
 '''
-Intro bites
-Bite 104 - Split and join
+You're given a dictionary of people and the number of games they've won.
 
-Split up the message on newline (\n) using the split builtin, then use the join builtin to stitch it together using
-a '|' (pipe).
+Use a for loop to iterate over the dictionary and print out the users name and how many games they've won in the following format: sara has won n games
 
-So Hello world:\nI am coding in Python :)\nHow awesome! would turn into: Hello world:|I am coding in Python :)|How awesome!
-
-Your code should work for other message strings as well.
+To make it human readable, pluralise the word game to suit the number of games won.
 '''
 
 
